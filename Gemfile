@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
+
 gem 'rails', '~> 4.2.0'
 gem 'bootstrap-sass'
 gem 'coffee-rails'
@@ -9,7 +11,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier'
 gem 'turbolinks'
 gem 'slim-rails'
-gem 'sqlite3'
+gem 'pg'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
