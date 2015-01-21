@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 ruby '2.2.0'
 
@@ -7,6 +8,8 @@ gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'rails-assets-bootstrap'
+gem 'rails-assets-bootstrap-material-design'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier'
 gem 'turbolinks'
