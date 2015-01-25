@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Recipe:
+  = @ingredient.recipe
+p
+  strong Name:
+  = @ingredient.name
+p
+  strong Amount:
+  = @ingredient.amount
+p
+  strong Unit:
+  = @ingredient.unit
+
+= link_to 'Edit', edit_ingredient_path(@ingredient)
+'|
+= link_to 'Back', ingredients_path
