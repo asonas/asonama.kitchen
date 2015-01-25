@@ -3,7 +3,7 @@ class CreateIngredients < ActiveRecord::Migration
     create_table :ingredients do |t|
       t.references :recipe, index: true
       t.string :name
-      t.number :amount
+      t.integer :amount
       t.string :unit
 
       t.timestamps null: false
