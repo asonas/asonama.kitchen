@@ -15,7 +15,7 @@ table
       tr
         td = recipe.name
         td = recipe.description
-        td = recipe.picture
+        td = image_tag recipe.picture
         td = link_to 'Show', recipe
         td = link_to 'Edit', edit_recipe_path(recipe)
         td = link_to 'Destroy', recipe, data: {:confirm => 'Are you sure?'}, :method => :delete
