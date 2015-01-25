@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "ingredients/new", :type => :view do
+RSpec.describe "ingredients/new", type: :view do
   before(:each) do
     assign(:ingredient, Ingredient.new(
-      :recipe => nil,
-      :name => "MyString",
-      :amount => "",
-      :unit => "MyString"
+      recipe: nil,
+      name: "MyString",
+      amount: "",
+      unit: "MyString"
     ))
   end
 

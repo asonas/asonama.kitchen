@@ -18,7 +18,7 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe IngredientsController, :type => :controller do
+RSpec.describe IngredientsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Ingredient. As you add validations to Ingredient, be sure to
@@ -47,7 +47,7 @@ RSpec.describe IngredientsController, :type => :controller do
   describe "GET show" do
     it "assigns the requested ingredient as @ingredient" do
       ingredient = Ingredient.create! valid_attributes
-      get :show, {:id => ingredient.to_param}, valid_session
+      get :show, {id: ingredient.to_param}, valid_session
       expect(assigns(:ingredient)).to eq(ingredient)
     end
   end
@@ -62,7 +62,7 @@ RSpec.describe IngredientsController, :type => :controller do
   describe "GET edit" do
     it "assigns the requested ingredient as @ingredient" do
       ingredient = Ingredient.create! valid_attributes
-      get :edit, {:id => ingredient.to_param}, valid_session
+      get :edit, {id: ingredient.to_param}, valid_session
       expect(assigns(:ingredient)).to eq(ingredient)
     end
   end
@@ -71,30 +71,30 @@ RSpec.describe IngredientsController, :type => :controller do
     describe "with valid params" do
       it "creates a new Ingredient" do
         expect {
-          post :create, {:ingredient => valid_attributes}, valid_session
+          post :create, {ingredient: valid_attributes}, valid_session
         }.to change(Ingredient, :count).by(1)
       end
 
       it "assigns a newly created ingredient as @ingredient" do
-        post :create, {:ingredient => valid_attributes}, valid_session
+        post :create, {ingredient: valid_attributes}, valid_session
         expect(assigns(:ingredient)).to be_a(Ingredient)
         expect(assigns(:ingredient)).to be_persisted
       end
 
       it "redirects to the created ingredient" do
-        post :create, {:ingredient => valid_attributes}, valid_session
+        post :create, {ingredient: valid_attributes}, valid_session
         expect(response).to redirect_to(Ingredient.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved ingredient as @ingredient" do
-        post :create, {:ingredient => invalid_attributes}, valid_session
+        post :create, {ingredient: invalid_attributes}, valid_session
         expect(assigns(:ingredient)).to be_a_new(Ingredient)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:ingredient => invalid_attributes}, valid_session
+        post :create, {ingredient: invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -108,20 +108,20 @@ RSpec.describe IngredientsController, :type => :controller do
 
       it "updates the requested ingredient" do
         ingredient = Ingredient.create! valid_attributes
-        put :update, {:id => ingredient.to_param, :ingredient => new_attributes}, valid_session
+        put :update, {id: ingredient.to_param, ingredient: new_attributes}, valid_session
         ingredient.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested ingredient as @ingredient" do
         ingredient = Ingredient.create! valid_attributes
-        put :update, {:id => ingredient.to_param, :ingredient => valid_attributes}, valid_session
+        put :update, {id: ingredient.to_param, ingredient: valid_attributes}, valid_session
         expect(assigns(:ingredient)).to eq(ingredient)
       end
 
       it "redirects to the ingredient" do
         ingredient = Ingredient.create! valid_attributes
-        put :update, {:id => ingredient.to_param, :ingredient => valid_attributes}, valid_session
+        put :update, {id: ingredient.to_param, ingredient: valid_attributes}, valid_session
         expect(response).to redirect_to(ingredient)
       end
     end
@@ -129,13 +129,13 @@ RSpec.describe IngredientsController, :type => :controller do
     describe "with invalid params" do
       it "assigns the ingredient as @ingredient" do
         ingredient = Ingredient.create! valid_attributes
-        put :update, {:id => ingredient.to_param, :ingredient => invalid_attributes}, valid_session
+        put :update, {id: ingredient.to_param, ingredient: invalid_attributes}, valid_session
         expect(assigns(:ingredient)).to eq(ingredient)
       end
 
       it "re-renders the 'edit' template" do
         ingredient = Ingredient.create! valid_attributes
-        put :update, {:id => ingredient.to_param, :ingredient => invalid_attributes}, valid_session
+        put :update, {id: ingredient.to_param, ingredient: invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -145,13 +145,13 @@ RSpec.describe IngredientsController, :type => :controller do
     it "destroys the requested ingredient" do
       ingredient = Ingredient.create! valid_attributes
       expect {
-        delete :destroy, {:id => ingredient.to_param}, valid_session
+        delete :destroy, {id: ingredient.to_param}, valid_session
       }.to change(Ingredient, :count).by(-1)
     end
 
     it "redirects to the ingredients list" do
       ingredient = Ingredient.create! valid_attributes
-      delete :destroy, {:id => ingredient.to_param}, valid_session
+      delete :destroy, {id: ingredient.to_param}, valid_session
       expect(response).to redirect_to(ingredients_url)
     end
   end

@@ -18,7 +18,7 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe RecipesController, :type => :controller do
+RSpec.describe RecipesController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Recipe. As you add validations to Recipe, be sure to
@@ -47,7 +47,7 @@ RSpec.describe RecipesController, :type => :controller do
   describe "GET show" do
     it "assigns the requested recipe as @recipe" do
       recipe = Recipe.create! valid_attributes
-      get :show, {:id => recipe.to_param}, valid_session
+      get :show, {id: recipe.to_param}, valid_session
       expect(assigns(:recipe)).to eq(recipe)
     end
   end
@@ -62,7 +62,7 @@ RSpec.describe RecipesController, :type => :controller do
   describe "GET edit" do
     it "assigns the requested recipe as @recipe" do
       recipe = Recipe.create! valid_attributes
-      get :edit, {:id => recipe.to_param}, valid_session
+      get :edit, {id: recipe.to_param}, valid_session
       expect(assigns(:recipe)).to eq(recipe)
     end
   end
@@ -71,30 +71,30 @@ RSpec.describe RecipesController, :type => :controller do
     describe "with valid params" do
       it "creates a new Recipe" do
         expect {
-          post :create, {:recipe => valid_attributes}, valid_session
+          post :create, {recipe: valid_attributes}, valid_session
         }.to change(Recipe, :count).by(1)
       end
 
       it "assigns a newly created recipe as @recipe" do
-        post :create, {:recipe => valid_attributes}, valid_session
+        post :create, {recipe: valid_attributes}, valid_session
         expect(assigns(:recipe)).to be_a(Recipe)
         expect(assigns(:recipe)).to be_persisted
       end
 
       it "redirects to the created recipe" do
-        post :create, {:recipe => valid_attributes}, valid_session
+        post :create, {recipe: valid_attributes}, valid_session
         expect(response).to redirect_to(Recipe.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved recipe as @recipe" do
-        post :create, {:recipe => invalid_attributes}, valid_session
+        post :create, {recipe: invalid_attributes}, valid_session
         expect(assigns(:recipe)).to be_a_new(Recipe)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:recipe => invalid_attributes}, valid_session
+        post :create, {recipe: invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -108,20 +108,20 @@ RSpec.describe RecipesController, :type => :controller do
 
       it "updates the requested recipe" do
         recipe = Recipe.create! valid_attributes
-        put :update, {:id => recipe.to_param, :recipe => new_attributes}, valid_session
+        put :update, {id: recipe.to_param, recipe: new_attributes}, valid_session
         recipe.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested recipe as @recipe" do
         recipe = Recipe.create! valid_attributes
-        put :update, {:id => recipe.to_param, :recipe => valid_attributes}, valid_session
+        put :update, {id: recipe.to_param, recipe: valid_attributes}, valid_session
         expect(assigns(:recipe)).to eq(recipe)
       end
 
       it "redirects to the recipe" do
         recipe = Recipe.create! valid_attributes
-        put :update, {:id => recipe.to_param, :recipe => valid_attributes}, valid_session
+        put :update, {id: recipe.to_param, recipe: valid_attributes}, valid_session
         expect(response).to redirect_to(recipe)
       end
     end
@@ -129,13 +129,13 @@ RSpec.describe RecipesController, :type => :controller do
     describe "with invalid params" do
       it "assigns the recipe as @recipe" do
         recipe = Recipe.create! valid_attributes
-        put :update, {:id => recipe.to_param, :recipe => invalid_attributes}, valid_session
+        put :update, {id: recipe.to_param, recipe: invalid_attributes}, valid_session
         expect(assigns(:recipe)).to eq(recipe)
       end
 
       it "re-renders the 'edit' template" do
         recipe = Recipe.create! valid_attributes
-        put :update, {:id => recipe.to_param, :recipe => invalid_attributes}, valid_session
+        put :update, {id: recipe.to_param, recipe: invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -145,13 +145,13 @@ RSpec.describe RecipesController, :type => :controller do
     it "destroys the requested recipe" do
       recipe = Recipe.create! valid_attributes
       expect {
-        delete :destroy, {:id => recipe.to_param}, valid_session
+        delete :destroy, {id: recipe.to_param}, valid_session
       }.to change(Recipe, :count).by(-1)
     end
 
     it "redirects to the recipes list" do
       recipe = Recipe.create! valid_attributes
-      delete :destroy, {:id => recipe.to_param}, valid_session
+      delete :destroy, {id: recipe.to_param}, valid_session
       expect(response).to redirect_to(recipes_url)
     end
   end

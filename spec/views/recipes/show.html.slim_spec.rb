@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "recipes/show", :type => :view do
+RSpec.describe "recipes/show", type: :view do
   before(:each) do
     @recipe = assign(:recipe, Recipe.create!(
-      :name => "Name",
-      :description => "MyText",
-      :picture => "Picture"
+      name: "Name",
+      description: "MyText",
+      picture: "Picture"
     ))
   end
 
