@@ -5,7 +5,9 @@ ruby '2.2.0'
 
 gem 'rails', '~> 4.2.0'
 gem 'bootstrap-sass'
+gem 'carrierwave'
 gem 'coffee-rails'
+gem "fog"
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'rails-assets-bootstrap'
