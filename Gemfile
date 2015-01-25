@@ -10,6 +10,7 @@ gem 'coffee-rails'
 gem "fog"
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'mini_magick'
 gem 'rails-assets-bootstrap'
 gem 'rails-assets-bootstrap-material-design'
 gem 'sass-rails', '~> 4.0.3'
