@@ -27,7 +27,9 @@ group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'guard-livereload', require: false
   gem 'pry', group: :test
+  gem "rack-livereload"
   gem 'spring'
 end
 
