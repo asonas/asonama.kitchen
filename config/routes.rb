@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root 'recipes#index'
+
   resources :recipes do
     resources :ingredients
   end
+
+  resources :tags, only: %i(create)
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

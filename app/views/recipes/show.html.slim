@@ -6,8 +6,20 @@ p#notice = notice
       .cover
         = image_tag @recipe.picture
   .col-md-7
-    h2
-      = @recipe.name
-    p
-      = @recipe.description
-
+    .well.bs-component
+      h2
+        = @recipe.name
+      p
+        = @recipe.description
+      ul
+        - @recipe.tags.each do |tag|
+          li
+            = tag.name
+      = form_for Tag.new, class: "form" do |form|
+        = form.hidden_field :recipe_id, value: @recipe.id
+        .form-group
+          label.control-lavel
+            | タグを追加する
+          .form-control-wrapper
+            = form.text_field :name, class: "form-control empty", placeholder: "tag"
+            span.material-input
