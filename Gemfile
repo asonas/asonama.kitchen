@@ -14,6 +14,7 @@ gem 'mini_magick'
 gem 'rails-assets-bootstrap'
 gem 'rails-assets-bootstrap-material-design'
 gem 'rails-assets-fontawesome'
+gem 'rails-assets-jquery-masonry'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier'
 gem 'turbolinks'
@@ -46,4 +47,3 @@ group :test do
   gem "poltergeist"
   gem 'rspec-rails', group: :development
 end
-

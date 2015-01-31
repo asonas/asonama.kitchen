@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap-material-design
+//= require jquery-masonry
 //= require_tree .
