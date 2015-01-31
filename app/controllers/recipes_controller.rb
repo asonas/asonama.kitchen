@@ -4,7 +4,11 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+    @recipes = if params[:tag]
+      Tag.find_by(name: params[:tag]).recipes
+    else
+      Recipe.all
+    end
   end
 
   # GET /recipes/1

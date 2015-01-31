@@ -14,6 +14,7 @@ p#notice = notice
       ul
         - @recipe.tags.each do |tag|
           li
+            = link_to tag.name, recipes_path(tag: tag.name)
             = tag.name
       = form_for Tag.new, class: "form" do |form|
         = form.hidden_field :recipe_id, value: @recipe.id
