@@ -1,18 +1,33 @@
-= form_for @recipe do |f|
-  - if @recipe.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@recipe.errors.count, "error")} prohibited this recipe from being saved:"
-      ul
-        - @recipe.errors.full_messages.each do |message|
-          li = message
+.well.bs-component
+  = form_for @recipe, class: "form" do |f|
+    - if @recipe.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@recipe.errors.count, "error")} prohibited this recipe from being saved:"
+        ul
+          - @recipe.errors.full_messages.each do |message|
+            li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :picture
-    = f.file_field :picture
-  .actions = f.submit
+    .form-group
+      label.control-label
+        = f.label :name
+      .form-control-wrapper
+        = f.text_field :name, class: "form-control empty"
+        span.material-input
+
+    .form-group
+      label.control-label
+        = f.label :description
+      .form-control-wrapper
+        = f.text_area :description, class: "form-control empty"
+      span.material-input
+
+    .form-group
+      label.control-label
+        = f.label :picture
+      .form-control-wrapper.fileinput
+        input.form-control.empty(readonly)
+        = f.file_field :picture
+        .floating-label
+          | 写真を選択
+        .material-input
+    = f.submit "投稿する", class: "btn btn-lg btn-primary"
