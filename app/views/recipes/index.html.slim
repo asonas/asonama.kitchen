@@ -1,9 +1,14 @@
 .recipes
-  -@recipes.each do |recipe|
-    .recipe
-      .cover
-        = image_tag recipe.picture
-      h2.title
-        = link_to recipe.name, recipe_path(recipe)
-      p.description
-        = recipe.description
+  -@recipes.each_slice(4) do |_recipes|
+    .row
+      - _recipes.each do |recipe|
+        .col-sm-3
+          .recipe.panel
+            .cover
+              = link_to recipe_path(recipe) do
+                = image_tag recipe.picture
+            .contents
+              strong
+                = link_to recipe.name, recipe_path(recipe)
+              p.date
+                = recipe.created_at.to_s(:date)
